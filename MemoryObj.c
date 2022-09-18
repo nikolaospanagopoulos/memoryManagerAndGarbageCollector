@@ -3,7 +3,8 @@
 
 void printMemoryData(const MemoryObj *mobj) {
 
-  printf("the pointer address is: %p, \n the bytes requested are: %zu, \n the "
+  printf("details for the leaked memory: \n the pointer address is: %p, \n the "
+         "bytes requested are: %zu, \n the "
          "calling function is: %s, \n the line number is: %d \n",
          mobj->address, mobj->size, mobj->functionName, mobj->lineNumber);
 }

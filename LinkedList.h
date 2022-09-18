@@ -21,4 +21,7 @@ void printList(const LinkedList *list);
 void clearList(LinkedList *list);
 void addNode(LinkedList *list, MemoryObj *memObj);
 void findAndDelete(LinkedList *list, void *ptr);
-void initializeMemory(LinkedList *list);
+int findIndex(const LinkedList *list, void *ptr);
+void deleteFront(LinkedList *list, void *ptr);
+void deleteBack(LinkedList *list, void *ptr);
+Node *getElementAtIndex(LinkedList *list, int index);
