@@ -7,9 +7,10 @@ typedef struct MemoryObj {
   int lineNumber;
   char *functionName;
   size_t size;
+  char *fileName;
 
 } MemoryObj;
 
 void printMemoryData(const MemoryObj *mobj);
 void setMemoryObj(MemoryObj *mobj, void *address, int lineNumber,
-                  char *functionName, size_t size);
+                  char *functionName, size_t size, char *fileName);

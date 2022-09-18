@@ -51,6 +51,7 @@ void clearList(LinkedList *list) {
 
     printMemoryData(&list->head->data);
     free(list->head->data.functionName);
+    free(list->head->data.fileName);
     free(list->head->data.address);
     free(list->head);
     list->head = current;
@@ -80,6 +81,7 @@ void findAndDelete(LinkedList *list, void *ptr) {
   Node *current = previous->next;
   previous->next = current->next;
   free(current->data.functionName);
+  free(current->data.fileName);
   free(current->data.address);
   free(current);
   list->length--;
@@ -94,6 +96,7 @@ void deleteBack(LinkedList *list, void *ptr) {
   list->tail = beforeLast;
   free(beforeLast->next->data.address);
   free(beforeLast->next->data.functionName);
+  free(beforeLast->next->data.fileName);
   free(beforeLast->next);
   list->tail->next = NULL;
   list->length--;
@@ -111,6 +114,7 @@ void deleteFront(LinkedList *list, void *ptr) {
   if (current->data.address == ptr) {
     free(current->data.address);
     free(current->data.functionName);
+    free(current->data.fileName);
     free(current);
   }
   list->length--;

@@ -16,9 +16,10 @@ int main() {
   int *arr3 = (int *)xalloc2(4 * sizeof(int), memory);
 
   xfree(arr2, memory);
-  xfree(arr3, memory);
 
-  clearList(memory);
+  xfree(arr3, memory);
+  //  clearList(memory);
+  free(memory);
 
   return 0;
 }
